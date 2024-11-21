@@ -35,6 +35,9 @@
 		<li>Easily customizable from the outside.</li>
 	</ul>
 
+	<h2>Installation</h2>
+	<code>npm i --save svelte-potato-ui</code>
+
 	<p>For now, check the source code of +page.svelte file for examples, docs coming soon.</p>
 </Container>
 
