@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Button from '$lib/button/Button.svelte';
 	import Card from '$lib/card/Card.svelte';
 	import CardTitle from '$lib/card/CardTitle.svelte';
@@ -26,6 +26,10 @@
 		contributor upon request.
 	</p>
 
+	<h2>Repository</h2>
+	<a href="https://github.com/karurosux/svelte-potato-ui">
+		https://github.com/karurosux/svelte-potato-ui
+	</a>
 	<h2>Philosophy and Commandments</h2>
 	<ul>
 		<li>Simplistic approach, components should not appear cluttered.</li>
@@ -62,7 +66,7 @@
     after:!shadow-sky-800
     "
 		>
-			Blue Button
+			Blue
 		</Button>
 	</Container>
 </Container>
