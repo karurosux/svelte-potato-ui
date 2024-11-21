@@ -26,10 +26,6 @@
 		contributor upon request.
 	</p>
 
-	<h2>Repository</h2>
-	<a href="https://github.com/karurosux/svelte-potato-ui">
-		https://github.com/karurosux/svelte-potato-ui
-	</a>
 	<h2>Philosophy and Commandments</h2>
 	<ul>
 		<li>Simplistic approach, components should not appear cluttered.</li>
@@ -38,6 +34,11 @@
 		<li>Use tailwind as much as possible to style components.</li>
 		<li>Easily customizable from the outside.</li>
 	</ul>
+
+	<h2>Repository</h2>
+	<a href="https://github.com/karurosux/svelte-potato-ui">
+		https://github.com/karurosux/svelte-potato-ui
+	</a>
 
 	<h2>Installation</h2>
 	<code>npm i --save svelte-potato-ui</code>
