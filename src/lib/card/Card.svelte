@@ -33,9 +33,11 @@
 	{...props}
 	bind:this={divWrapper}
 	class="card border-3 flex flex-col overflow-hidden rounded-xl border-gray-200 {classNames}"
+	role="region"
+	aria-labelledby="card-header"
 >
 	{#if header || headerTrailing}
-		<div class="card-header flex items-center bg-gray-200 p-4 {headerClass}">
+		<div id="card-header" class="card-header flex items-center bg-gray-200 p-4 {headerClass}">
 			{@render header?.()}
 			<span class="flex-1"></span>
 			{@render headerTrailing?.()}

@@ -67,15 +67,17 @@
 	class:!h-10={sm}
 	class:!text-sm={sm}
 	class:active:!pt-4={sm}
+	aria-busy={loading}
+	aria-disabled={loading || disabled}
 	{onclick}
 >
 	{#if icon && !loading}
-		<span class="mr-2">
+		<span class="mr-2" aria-hidden="true">
 			{@render icon()}
 		</span>
 	{/if}
 	{#if loading}
-		<div class="mr-2">
+		<div class="mr-2" aria-hidden="true">
 			<span
 				class="
         loader
