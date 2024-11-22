@@ -4,14 +4,16 @@
 	import CardTitle from '$lib/card/CardTitle.svelte';
 	import Container from '$lib/container/Container.svelte';
 	import Title from '$lib/general/Title.svelte';
+	import tater from '../assets/tater.png';
 </script>
 
 <svelte:head>
 	<title>✨ Svelte Potato UI | Sleek and Simplistic Svelte UI Components</title>
 </svelte:head>
 
-<Container class="prose prose-indigo prose-invert lg:prose-xl">
-	<h1>✨ Svelte Potato UI</h1>
+<Container class="prose prose-sky prose-invert lg:prose-xl">
+	<h1>✨ Svelte <span class="shine-effect">Potato UI</span></h1>
+	<img src={tater} alt="tater" class="m-auto h-56" />
 	<p>
 		Potato UI is a passion project that emerged from a quest for unique and simplistic UI library,
 		offering a fresh and distinctive approach.
@@ -89,3 +91,22 @@
 		</Card>
 	</Container>
 </Container>
+
+<style>
+	.shine-effect {
+		display: inline-block;
+		background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, red);
+		background-size: 200% auto;
+		color: #fff;
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation: shine 2s linear infinite;
+	}
+
+	@keyframes shine {
+		to {
+			background-position: 200% center;
+		}
+	}
+</style>
