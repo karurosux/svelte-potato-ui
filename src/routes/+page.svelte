@@ -1,9 +1,22 @@
 <script lang="ts">
+	import Alert from '$lib/alert/Alert.svelte';
 	import Button from '$lib/button/Button.svelte';
 	import Card from '$lib/card/Card.svelte';
 	import CardTitle from '$lib/card/CardTitle.svelte';
 	import Container from '$lib/container/Container.svelte';
+	import Switch from '$lib/form/Switch.svelte';
+	import Input from '$lib/form/Input.svelte';
+	import Select from '$lib/form/Select.svelte';
+	import TextArea from '$lib/form/TextArea.svelte';
 	import Title from '$lib/general/Title.svelte';
+	import LoadingSpinner from '$lib/loading-spinner/LoadingSpinner.svelte';
+	import Table from '$lib/table/Table.svelte';
+	import TableHeader from '$lib/table/TableHeader.svelte';
+	import TableHeaderCell from '$lib/table/TableHeaderCell.svelte';
+	import TableRow from '$lib/table/TableRow.svelte';
+	import TableRowCell from '$lib/table/TableRowCell.svelte';
+	import { toastMessage } from '$lib/toastr/toast.js';
+	import Toast from '$lib/toastr/Toast.svelte';
 	import tater from '../assets/tater.png';
 </script>
 
@@ -87,8 +100,104 @@
 					Hello Title!
 				</CardTitle>
 			{/snippet}
+			{#snippet headerTrailing()}
+				<Button
+					sm
+					class="!text-black before:!border-black before:!bg-gray-200 after:!border-black after:shadow-black"
+					>Action</Button
+				>
+			{/snippet}
 			This is the body
 		</Card>
+	</Container>
+</Container>
+
+<Container col topSpacing class="max-w-[800px]">
+	<Title>Loading Spinner</Title>
+	<Container col centeredVertically centeredHorizontally class="flex-nowrap">
+		<Card class="h-[200px] w-full">
+			{#snippet header()}
+				<CardTitle>This is a panel that is loading.</CardTitle>
+			{/snippet}
+			<LoadingSpinner absolute />
+		</Card>
+	</Container>
+</Container>
+
+<Container col topSpacing class="max-w-[800px]">
+	<Title>Table</Title>
+	<Container col centeredVertically centeredHorizontally class="flex-nowrap">
+		<Card class="h-[250px] w-full" bodyClass="overflow-auto" noPadding>
+			{#snippet header()}
+				<CardTitle>This is a table</CardTitle>
+			{/snippet}
+			<Table>
+				{#snippet header()}
+					<TableHeader>
+						<TableHeaderCell>Name</TableHeaderCell>
+						<TableHeaderCell>Description</TableHeaderCell>
+					</TableHeader>
+				{/snippet}
+				<TableRow>
+					<TableRowCell>Jhon</TableRowCell>
+					<TableRowCell>Jhon is not Doe...</TableRowCell>
+				</TableRow>
+				<TableRow>
+					<TableRowCell>Jhony</TableRowCell>
+					<TableRowCell>Nope, he is neither...</TableRowCell>
+				</TableRow>
+			</Table>
+		</Card>
+	</Container>
+</Container>
+
+<Container col topSpacing class="max-w-[800px]">
+	<Title>Form</Title>
+	<div class="grid grid-cols-2 gap-8">
+		<Input placeholder="First Name" class="col-span-1" />
+		<Input placeholder="Last Name" class="col-span-1" />
+		<TextArea placeholder="Description" class="col-span-2" />
+		<Select
+			class="col-span-2"
+			placeholder="Gender"
+			options={[
+				{
+					label: 'Male',
+					value: 'm'
+				},
+				{
+					label: 'Female',
+					value: 'f'
+				}
+			]}
+		/>
+		<Switch label="Is Admin" />
+	</div>
+</Container>
+
+<Container col topSpacing class="max-w-[800px]">
+	<Title>Toast</Title>
+	<Button
+		onclick={() =>
+			toastMessage.set({
+				message: 'Hello there! This is a toast message :)'
+			})}
+	>
+		Show Toast
+	</Button>
+	<Toast />
+</Container>
+
+<Container col topSpacing class="max-w-[800px]">
+	<Title>Alert</Title>
+	<Container col centeredVertically centeredHorizontally class="flex-nowrap">
+		<Alert class="mb-4 w-full">This is a neutral alert.</Alert>
+		<Alert class="mb-4 w-full !border-red-500 !bg-red-950 bg-opacity-25"
+			>This is an alert of other color.</Alert
+		>
+		<Alert class="mb-4 w-full !border-green-500 !bg-green-950 bg-opacity-25"
+			>Hello, I am green!</Alert
+		>
 	</Container>
 </Container>
 

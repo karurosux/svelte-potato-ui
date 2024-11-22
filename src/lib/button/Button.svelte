@@ -1,4 +1,5 @@
 <script lang="ts">
+	import LoadingSpinner from '$lib/loading-spinner/LoadingSpinner.svelte';
 	import { type Snippet } from 'svelte';
 
 	type Props = {
@@ -78,19 +79,7 @@
 	{/if}
 	{#if loading}
 		<div class="mr-2" aria-hidden="true">
-			<span
-				class="
-        loader
-        block
-        h-4
-        w-4
-        animate-spin
-        rounded-full
-        border-4
-        ease-linear
-        "
-			>
-			</span>
+			<LoadingSpinner />
 		</div>
 	{/if}
 	{#if children}
