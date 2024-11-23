@@ -1,6 +1,6 @@
 {
 	"name": "svelte-potato-ui",
-	"version": "0.4.0-0",
+	"version": "0.2.3",
 	"author": {
 		"name": "Carlos Gonzalez",
 		"email": "justdevelopitmx@proton.me"
@@ -8,8 +8,9 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
+		"build:css": "tailwindcss -o dist/potato-ui.css -m",
 		"preview": "vite preview",
-		"package": "svelte-kit sync && svelte-package && publint",
+		"package": "svelte-kit sync && svelte-package && publint && npm run build:css",
 		"prepublishOnly": "npm run package",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -38,8 +39,7 @@
 		}
 	},
 	"peerDependencies": {
-		"svelte": "^5.0.0",
-		"tailwindcss": "^3.4.9"
+		"svelte": "^5.0.0"
 	},
 	"devDependencies": {
 		"@chromatic-com/storybook": "^3.2.2",
