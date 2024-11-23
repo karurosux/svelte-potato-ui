@@ -1,8 +1,5 @@
 <script lang="ts">
-	type SelectOption = {
-		label: string;
-		value: string;
-	};
+	import type { SelectOption } from './select.js';
 
 	type Props = {
 		value?: string;
