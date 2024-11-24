@@ -9,7 +9,7 @@
 	let {
 		placeholder = '',
 		class: classNames = '',
-		value = '',
+		value = $bindable(''),
 		ariaDescribedby = '',
 		...props
 	}: Props = $props();

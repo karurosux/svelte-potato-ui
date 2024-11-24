@@ -4,7 +4,7 @@
 		value?: boolean;
 		[key: string]: any;
 	};
-	let { label = '', value = false, ...props }: Props = $props();
+	let { label = '', value = $bindable(false), ...props }: Props = $props();
 </script>
 
 <div class="relative inline-flex gap-2">

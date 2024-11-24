@@ -11,7 +11,7 @@
 	};
 
 	let {
-		value = '',
+		value = $bindable(''),
 		placeholder = '',
 		options = [],
 		class: classNames = '',
