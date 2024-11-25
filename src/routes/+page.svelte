@@ -101,11 +101,7 @@
 				</CardTitle>
 			{/snippet}
 			{#snippet headerTrailing()}
-				<Button
-					sm
-					class="!text-black before:!border-black before:!bg-gray-200 after:!border-black after:shadow-black"
-					>Action</Button
-				>
+				<Button sm class="invert">Action</Button>
 			{/snippet}
 			This is the body
 		</Card>

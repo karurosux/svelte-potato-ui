@@ -18,6 +18,8 @@ import type { SelectOption } from './form/select.js';
 import TextArea from './form/TextArea.svelte';
 import Switch from './form/Switch.svelte';
 import Alert from './alert/Alert.svelte';
+import Tabs from './tabs/Tabs.svelte';
+import type { Tab } from './tabs/tab.js';
 
 export {
 	Button,
@@ -37,7 +39,8 @@ export {
 	Select,
 	TextArea,
 	Switch,
-	Alert
+	Alert,
+	Tabs
 };
 
-export type { SelectOption };
+export type { SelectOption, Tab };

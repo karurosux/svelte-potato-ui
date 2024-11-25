@@ -9,6 +9,7 @@
 		sm?: boolean;
 		disabled?: boolean;
 		class?: string;
+		type?: HTMLButtonElement['type'];
 
 		// Snippets
 		icon?: Snippet;
@@ -19,6 +20,7 @@
 	};
 
 	const {
+		type,
 		buttonText = 'Default',
 		loading = false,
 		sm = false,
@@ -33,6 +35,7 @@
 
 <button
 	{...props}
+	{type}
 	disabled={loading || disabled}
 	class="
   btn relative isolate flex h-16 min-w-16
