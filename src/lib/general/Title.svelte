@@ -1,14 +1,14 @@
 <script lang="ts">
-  import { type Snippet } from "svelte";
+	import { type Snippet } from 'svelte';
 
-  interface Props {
-    children?: Snippet;
-    class?: string;
-  }
+	interface Props {
+		children?: Snippet;
+		class?: string;
+	}
 
-  let { children, class:classNames = "" }: Props = $props();
+	let { children, class: classNames = '' }: Props = $props();
 </script>
 
-<h1 class="text-2xl text-white mb-8 font-semibold {classNames}">
-  {@render children?.()}
+<h1 class="mb-8 text-2xl font-semibold text-white {classNames}">
+	{@render children?.()}
 </h1>

@@ -20,6 +20,7 @@ import Switch from './form/Switch.svelte';
 import Alert from './alert/Alert.svelte';
 import Tabs from './tabs/Tabs.svelte';
 import type { Tab } from './tabs/tab.js';
+import ConfirmationDialog from './confirmation-dialog/ConfirmationDialog.svelte';
 
 export {
 	Button,
@@ -40,7 +41,8 @@ export {
 	TextArea,
 	Switch,
 	Alert,
-	Tabs
+	Tabs,
+	ConfirmationDialog
 };
 
 export type { SelectOption, Tab };

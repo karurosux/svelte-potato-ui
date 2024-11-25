@@ -18,6 +18,9 @@
 	import { toastMessage } from '$lib/toastr/toast.js';
 	import Toast from '$lib/toastr/Toast.svelte';
 	import tater from '../assets/tater.png';
+	import ConfirmationDialog from '$lib/confirmation-dialog/ConfirmationDialog.svelte';
+
+	let confirmationDialog: ConfirmationDialog | undefined = $state();
 </script>
 
 <svelte:head>
@@ -63,11 +66,11 @@
 
 <Container col topSpacing class="max-w-[800px]">
 	<Title>Button</Title>
-	<Container centeredVertically centeredHorizontally class="flex-nowrap">
-		<Button class="mr-4" onclick={() => alert('Hello Champ!')}>Default</Button>
-		<Button class="mr-4" loading>Loading</Button>
-		<Button class="mr-4" disabled>Disabled</Button>
-		<Button class="mr-4" disabled>
+	<Container centeredVertically centeredHorizontally class="!flex-col flex-nowrap md:!flex-row">
+		<Button class="mb-4 mr-4 md:mb-0" onclick={() => alert('Hello Champ!')}>Default</Button>
+		<Button class="mb-4 mr-4 md:mb-0" loading>Loading</Button>
+		<Button class="mb-4 mr-4 md:mb-0" disabled>Disabled</Button>
+		<Button class="mb-4 mr-4 md:mb-0" disabled>
 			{#snippet icon()}
 				<span class="block h-4 w-4 rounded-full bg-blue-400"></span>
 			{/snippet}
@@ -75,11 +78,13 @@
 		</Button>
 		<Button
 			class="
+    mb-4
     !text-sky-800
     before:!border-sky-800
     before:!bg-sky-400
     after:!border-sky-800
     after:!shadow-sky-800
+    md:mb-0
     "
 		>
 			Blue
@@ -183,6 +188,22 @@
 	</Button>
 	<Toast />
 </Container>
+
+<Container col topSpacing class="max-w-[800px]">
+	<Title>Confirmation Dialog</Title>
+	<Button onclick={() => confirmationDialog?.showModal()}>Show Confirmation Dialog</Button>
+	<Toast />
+</Container>
+
+<ConfirmationDialog
+	bind:this={confirmationDialog}
+	onok={() => {
+		console.log('Ok...');
+		confirmationDialog?.closeModal();
+	}}
+>
+	Hello, I am a confirmation dialog!
+</ConfirmationDialog>
 
 <Container col topSpacing class="max-w-[800px]">
 	<Title>Alert</Title>
