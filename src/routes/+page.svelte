@@ -60,7 +60,7 @@
 		https://github.com/karurosux/svelte-potato-ui
 	</a>
 
-	<h2>NPM</h2>
+	<h2>Package</h2>
 	<a href="https://www.npmjs.com/package/svelte-potato-ui">
 		https://www.npmjs.com/package/svelte-potato-ui
 	</a>
