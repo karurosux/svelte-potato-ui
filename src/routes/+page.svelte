@@ -19,6 +19,8 @@
 	import Toast from '$lib/toastr/Toast.svelte';
 	import tater from '../assets/tater.png';
 	import ConfirmationDialog from '$lib/confirmation-dialog/ConfirmationDialog.svelte';
+	import Pager from '$lib/pager/Pager.svelte';
+	import Tabs from '$lib/tabs/Tabs.svelte';
 
 	let confirmationDialog: ConfirmationDialog | undefined = $state();
 </script>
@@ -148,6 +150,28 @@
 					<TableRowCell>Nope, he is neither...</TableRowCell>
 				</TableRow>
 			</Table>
+		</Card>
+	</Container>
+</Container>
+
+<Container col topSpacing class="max-w-[800px]">
+	<Title>Pager</Title>
+	<Container col centeredVertically centeredHorizontally class="flex-nowrap">
+		<Pager
+			onchange={(page) => toastMessage.set({ message: `You are on page ${page}`, duration: 500 })}
+		/>
+	</Container>
+</Container>
+
+<Container col topSpacing class="max-w-[800px]">
+	<Title>Tabs</Title>
+	<Container col centeredVertically centeredHorizontally class="flex-nowrap">
+		<Card class="h-[250px] w-full" bodyClass="overflow-auto" noPadding>
+			<Tabs tabs={[{ label: 'Tab 1' }, { label: 'Tab 2' }, { label: 'Tab 3' }]}>
+				{#snippet content(selectedIndex)}
+					<p class="p-4">Hello, this is tab {selectedIndex + 1}!</p>
+				{/snippet}
+			</Tabs>
 		</Card>
 	</Container>
 </Container>

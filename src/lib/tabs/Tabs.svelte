@@ -11,7 +11,7 @@
 		onchange?: (selectedIndex: number) => void;
 	};
 
-	let { content, heading, onchange, tabs = [], canChangeTab = false, ...props }: Props = $props();
+	let { content, heading, onchange, tabs = [], canChangeTab = true, ...props }: Props = $props();
 	let selectedIndex = $state(0);
 
 	const handleClickTab = (index: number) => () => {

@@ -21,6 +21,7 @@ import Alert from './alert/Alert.svelte';
 import Tabs from './tabs/Tabs.svelte';
 import type { Tab } from './tabs/tab.js';
 import ConfirmationDialog from './confirmation-dialog/ConfirmationDialog.svelte';
+import Pager from './pager/Pager.svelte';
 
 export {
 	Button,
@@ -42,7 +43,8 @@ export {
 	Switch,
 	Alert,
 	Tabs,
-	ConfirmationDialog
+	ConfirmationDialog,
+	Pager
 };
 
 export type { SelectOption, Tab };
