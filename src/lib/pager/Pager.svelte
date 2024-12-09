@@ -3,11 +3,13 @@
 
 	interface Props {
 		page?: number;
-		totalPages?: number;
+		totalRecords?: number;
+		recordsPerPage?: number;
 		onchange?: (page: number) => void;
 	}
 
-	let { page = 1, totalPages = 80, onchange }: Props = $props();
+	let { page = 1, totalRecords = 10, recordsPerPage = 10, onchange }: Props = $props();
+	let totalPages = $derived(Math.ceil(totalRecords / recordsPerPage));
 
 	function handlePrevious() {
 		if (page > 1) {
@@ -39,6 +41,10 @@
 		}
 		return pages;
 	}
+
+	$effect(() => {
+		console.log(totalPages);
+	});
 </script>
 
 <div class="flex items-center justify-center gap-4">

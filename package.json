@@ -5,6 +5,10 @@
 		"name": "Carlos Gonzalez",
 		"email": "justdevelopitmx@proton.me"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/karurosux/svelte-potato-ui.git"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
@@ -25,7 +29,8 @@
 		"dist",
 		"!dist/**/*.test.*",
 		"!dist/**/*.spec.*",
-		"LICENSE"
+		"LICENSE",
+		"README.md"
 	],
 	"sideEffects": [
 		"**/*.css"

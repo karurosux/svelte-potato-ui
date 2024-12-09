@@ -60,6 +60,11 @@
 		https://github.com/karurosux/svelte-potato-ui
 	</a>
 
+	<h2>NPM</h2>
+	<a href="https://www.npmjs.com/package/svelte-potato-ui">
+		https://www.npmjs.com/package/svelte-potato-ui
+	</a>
+
 	<h2>Installation</h2>
 	<code>npm i --save svelte-potato-ui</code>
 
@@ -158,6 +163,8 @@
 	<Title>Pager</Title>
 	<Container col centeredVertically centeredHorizontally class="flex-nowrap">
 		<Pager
+			totalRecords={101}
+			recordsPerPage={10}
 			onchange={(page) => toastMessage.set({ message: `You are on page ${page}`, duration: 500 })}
 		/>
 	</Container>
