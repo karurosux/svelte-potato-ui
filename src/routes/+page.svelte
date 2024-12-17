@@ -186,12 +186,13 @@
 <Container col topSpacing class="max-w-[800px]">
 	<Title>Form</Title>
 	<div class="grid grid-cols-2 gap-8">
-		<Input placeholder="First Name" class="col-span-1" />
-		<Input placeholder="Last Name" class="col-span-1" />
-		<TextArea placeholder="Description" class="col-span-2" />
+		<Input placeholder="First Name" class="col-span-1" required />
+		<Input placeholder="Last Name" class="col-span-1" required />
+		<TextArea placeholder="Description" class="col-span-2" required />
 		<Select
 			class="col-span-2"
 			placeholder="Gender"
+			required
 			options={[
 				{
 					label: 'Male',

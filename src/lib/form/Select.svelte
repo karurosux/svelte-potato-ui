@@ -7,6 +7,7 @@
 		options: SelectOption[];
 		class?: string;
 		selectClass?: string;
+		required?: boolean;
 		[key: string]: any;
 	};
 
@@ -14,6 +15,7 @@
 		value = $bindable(''),
 		placeholder = '',
 		options = [],
+		required = false,
 		class: classNames = '',
 		selectClass = '',
 		...props
@@ -21,7 +23,9 @@
 </script>
 
 <div class="mb-select relative inline-block {classNames}">
-	<label for="select-input" class="sr-only">{placeholder}</label>
+	<label for="select-input" class="sr-only">
+		{required && placeholder ? placeholder + '*' : placeholder}
+	</label>
 	<select
 		{...props}
 		bind:value
@@ -40,7 +44,7 @@
 	>
 		{#if placeholder}
 			<option value="" disabled selected hidden class="!text-sky-500">
-				{placeholder}
+				{required && placeholder ? placeholder + '*' : placeholder}
 			</option>
 		{/if}
 

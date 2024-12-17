@@ -3,6 +3,7 @@
 		placeholder?: string;
 		class?: string;
 		value?: string;
+		required?: boolean;
 		[key: string]: any;
 	};
 
@@ -10,13 +11,15 @@
 		placeholder = '',
 		class: classNames = '',
 		value = $bindable(''),
+		required = false,
 		...props
 	}: Props = $props();
 </script>
 
 <input
 	{...props}
-	{placeholder}
+	placeholder={required && placeholder ? placeholder + '*' : placeholder}
+	{required}
 	class="rounded-lg border-2 border-white bg-black p-4
   px-8 text-lg font-bold text-white outline-none
   focus:border-sky-300
