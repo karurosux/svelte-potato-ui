@@ -22,6 +22,8 @@ import Tabs from './tabs/Tabs.svelte';
 import type { Tab } from './tabs/tab.js';
 import ConfirmationDialog from './confirmation-dialog/ConfirmationDialog.svelte';
 import Pager from './pager/Pager.svelte';
+import DropdownMenu from './dropdown-menu/DropdownMenu.svelte';
+import DropdownMenuItem from './dropdown-menu/DropdownMenuItem.svelte';
 
 export {
 	Button,
@@ -44,7 +46,9 @@ export {
 	Alert,
 	Tabs,
 	ConfirmationDialog,
-	Pager
+	Pager,
+	DropdownMenu,
+	DropdownMenuItem
 };
 
 export type { SelectOption, Tab };

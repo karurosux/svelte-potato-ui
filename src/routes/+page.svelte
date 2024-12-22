@@ -21,6 +21,8 @@
 	import ConfirmationDialog from '$lib/confirmation-dialog/ConfirmationDialog.svelte';
 	import Pager from '$lib/pager/Pager.svelte';
 	import Tabs from '$lib/tabs/Tabs.svelte';
+	import DropdownMenu from '$lib/dropdown-menu/DropdownMenu.svelte';
+	import DropdownMenuItem from '$lib/dropdown-menu/DropdownMenuItem.svelte';
 
 	let confirmationDialog: ConfirmationDialog | undefined = $state();
 </script>
@@ -219,6 +221,43 @@
 		Show Toast
 	</Button>
 	<Toast />
+</Container>
+
+<Container col topSpacing class="max-w-[800px]">
+	<Title>Dropdown Menu</Title>
+	<Container col centeredVertically class="flex-nowrap">
+		<DropdownMenu>
+			{#snippet trigger(toggle)}
+				<Button onclick={toggle}>This is the trigger</Button>
+			{/snippet}
+			{#snippet items(toggle)}
+				<DropdownMenuItem onclick={toggle}>
+					{#snippet icon()}
+						<span class="block h-4 w-4 rounded-full bg-blue-400"></span>
+					{/snippet}
+					Option 1
+				</DropdownMenuItem>
+				<DropdownMenuItem onclick={toggle}>
+					{#snippet icon()}
+						<span class="block h-4 w-4 rounded-full bg-red-400"></span>
+					{/snippet}
+					Option 2
+				</DropdownMenuItem>
+				<DropdownMenuItem onclick={toggle}>
+					{#snippet icon()}
+						<span class="block h-4 w-4 rounded-full bg-green-400"></span>
+					{/snippet}
+					Option 3
+				</DropdownMenuItem>
+				<DropdownMenuItem onclick={toggle}>
+					{#snippet icon()}
+						<span class="block h-4 w-4 rounded-full bg-red-400"></span>
+					{/snippet}
+					Option 4
+				</DropdownMenuItem>
+			{/snippet}
+		</DropdownMenu>
+	</Container>
 </Container>
 
 <Container col topSpacing class="max-w-[800px]">
