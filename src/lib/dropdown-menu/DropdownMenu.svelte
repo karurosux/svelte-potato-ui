@@ -26,9 +26,9 @@
 	{#if dropdownOpen}
 		<!-- svelte-ignore a11y_click_events_have_key_events -->
 		<!-- svelte-ignore a11y_no_static_element_interactions -->
-		<div class="fixed bottom-0 left-0 right-0 top-0" onclick={toggle}></div>
+		<div class="fixed bottom-0 left-0 right-0 top-0 z-40" onclick={toggle}></div>
 		<Card
-			class="absolute z-20 min-w-[250px] bg-black {dropdownClass}"
+			class="absolute z-50 min-w-[250px] bg-black {dropdownClass}"
 			bodyClass="overflow-y-auto"
 			style="top: {dropdownPosition}"
 		>
