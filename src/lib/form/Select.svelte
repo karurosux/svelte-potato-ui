@@ -30,16 +30,7 @@
 		{...props}
 		bind:value
 		id="select-input"
-		class="w-full appearance-none rounded-lg border-2 border-white
-    bg-black p-4 px-8 text-lg font-bold
-    text-white outline-none
-    focus:border-sky-300
-    focus:outline-none
-    focus:ring-1
-    focus:ring-sky-300
-    focus:invalid:border-pink-500 focus:invalid:ring-pink-500
-    {selectClass}
-    "
+		class="input w-full appearance-none outline-none {selectClass}"
 		aria-label={placeholder}
 	>
 		{#if placeholder}

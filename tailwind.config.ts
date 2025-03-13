@@ -1,4 +1,5 @@
 import typography from '@tailwindcss/typography';
+import colorsPlugin from './src/lib/tailwind/plugin';
 import type { Config } from 'tailwindcss';
 
 export default {
@@ -6,5 +7,5 @@ export default {
 	theme: {
 		extend: {}
 	},
-	plugins: [typography]
+	plugins: [typography, colorsPlugin]
 } satisfies Config;

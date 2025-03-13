@@ -8,11 +8,12 @@
 	let dropdownOpen = $state(false);
 
 	interface Props {
+		class?: string;
 		dropdownClass?: string;
 		trigger: Snippet<[typeof toggle]>;
 		items: Snippet<[typeof toggle]>;
 	}
-	const { trigger, items, dropdownClass = '' }: Props = $props();
+	const { trigger, items, dropdownClass = '', class: classNames = '' }: Props = $props();
 
 	let dropdownPosition = $derived((wrapper?.clientHeight || 0) + TOP_DD_MARGIN + 'px');
 
@@ -21,17 +22,13 @@
 	};
 </script>
 
-<span class="dropdown-menu-wrapper relative" bind:this={wrapper}>
+<span class="dropdown-menu-wrapper {classNames}" bind:this={wrapper}>
 	{@render trigger?.(toggle)}
 	{#if dropdownOpen}
 		<!-- svelte-ignore a11y_click_events_have_key_events -->
 		<!-- svelte-ignore a11y_no_static_element_interactions -->
-		<div class="fixed bottom-0 left-0 right-0 top-0 z-40" onclick={toggle}></div>
-		<Card
-			class="absolute z-50 min-w-[250px] bg-black {dropdownClass}"
-			bodyClass="overflow-y-auto"
-			style="top: {dropdownPosition}"
-		>
+		<div class="dropdown-backdrop" onclick={toggle}></div>
+		<Card class="dropdown-menu {dropdownClass}" style="top: {dropdownPosition}">
 			{@render items?.(toggle)}
 		</Card>
 	{/if}

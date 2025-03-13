@@ -10,6 +10,6 @@
 	let { children, class: classNames = '', ...props }: Props = $props();
 </script>
 
-<td {...props} class="p-4 py-8 text-lg {classNames}">
+<td {...props} class="table-row-cell {classNames}">
 	{@render children?.()}
 </td>

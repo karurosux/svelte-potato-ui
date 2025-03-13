@@ -4,7 +4,20 @@
 	import { v4 as uuidv4 } from 'uuid';
 	import { writable } from 'svelte/store';
 
+	type ToastPosition = 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left';
+
+	type Props = { position?: ToastPosition };
+
+	const positionClassMap: Record<ToastPosition, string> = {
+		'top-right': 'toast-container-right-top',
+		'top-left': 'toast-container-left-top',
+		'bottom-right': 'toast-container-right-bottom',
+		'bottom-left': 'toast-container-left-bottom'
+	};
+
 	const msgs = writable<{ id: string; item: ToastMessage }[]>([]);
+	let { position: variant = 'top-right' }: Props = $props();
+	let positionClass = $derived(positionClassMap[variant]);
 
 	$effect(() => {
 		if ($toastMessage) {
@@ -19,12 +32,9 @@
 	});
 </script>
 
-<div class="fixed right-8 top-8 grid grid-cols-1 gap-8">
+<div class="toast-container {positionClass}">
 	{#each $msgs as m (m.id)}
-		<div
-			transition:fade={{ duration: 300 }}
-			class="flex min-w-[200px] max-w-[500px] items-center justify-center rounded-lg border-2 bg-black p-8 text-white shadow-lg"
-		>
+		<div transition:fade={{ duration: 300 }} class="toast-instance {m.item.toastClass}">
 			<p class="flex-1 text-xl">{m.item.message}</p>
 		</div>
 	{/each}

@@ -3,5 +3,25 @@
 @import 'tailwindcss/utilities';
 
 :root {
-	@apply bg-black p-8;
+	@apply p-8;
+}
+
+/* Light mode styles */
+@media (prefers-color-scheme: light) {
+	:root {
+		@apply bg-white text-gray-900;
+		* {
+			@apply text-gray-900;
+		}
+	}
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+	:root {
+		@apply bg-neutral-900 text-white;
+		* {
+			@apply text-white;
+		}
+	}
 }

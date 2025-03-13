@@ -20,17 +20,16 @@
 	};
 </script>
 
-<div {...props} class="flex h-full w-full flex-col {props.class}">
-	<div class="tabs flex w-full overflow-hidden border-b-2 border-gray-200">
+<div {...props} class="tabs-wrapper {props.class}">
+	<div class="tabs">
 		{#if heading}
 			{@render heading()}
 		{/if}
 		{#each tabs as { icon: Icon, ...t }, index}
 			<button
 				disabled={!canChangeTab}
-				class="tab flex flex-1 cursor-pointer select-none items-center justify-center border-r-2 border-gray-200 p-4 text-center font-bold uppercase text-gray-200 last:border-0 hover:bg-gray-800 disabled:opacity-65 {t.className}"
-				class:!bg-gray-200={selectedIndex === index}
-				class:!text-black={selectedIndex === index}
+				class="tab {t.className}"
+				class:selected={selectedIndex === index}
 				onclick={handleClickTab(index)}
 			>
 				{#if Icon}

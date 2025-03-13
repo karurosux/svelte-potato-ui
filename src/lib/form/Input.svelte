@@ -1,9 +1,10 @@
 <script lang="ts">
-	type Props = {
+	type Props = Partial<HTMLInputElement> & {
 		placeholder?: string;
 		class?: string;
 		value?: string;
 		required?: boolean;
+		inputEl?: HTMLInputElement | null;
 		[key: string]: any;
 	};
 
@@ -11,22 +12,17 @@
 		placeholder = '',
 		class: classNames = '',
 		value = $bindable(''),
+		inputEl = $bindable(null),
 		required = false,
 		...props
 	}: Props = $props();
 </script>
 
 <input
-	{...props}
+	{...props as any}
+	bind:this={inputEl}
 	placeholder={required && placeholder ? placeholder + '*' : placeholder}
 	{required}
-	class="rounded-lg border-2 border-white bg-black p-4
-  px-8 text-lg font-bold text-white outline-none
-  focus:border-sky-300
-  focus:outline-none
-  focus:ring-1
-  focus:ring-sky-300
-  focus:invalid:border-pink-500 focus:invalid:ring-pink-500
-  {classNames}"
+	class="input {classNames}"
 	bind:value
 />
