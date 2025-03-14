@@ -25,7 +25,6 @@ import Pager from './pager/Pager.svelte';
 import DropdownMenu from './dropdown-menu/DropdownMenu.svelte';
 import DropdownMenuItem from './dropdown-menu/DropdownMenuItem.svelte';
 import Autocomplete from './autocomplete/Autocomplete.svelte';
-import potatoPlugin from './tailwind/plugin.js';
 
 export {
 	Button,
@@ -51,8 +50,7 @@ export {
 	Pager,
 	DropdownMenu,
 	DropdownMenuItem,
-	Autocomplete,
-	potatoPlugin
+	Autocomplete
 };
 
 export type { SelectOption, Tab };
