@@ -109,15 +109,15 @@
 	};
 </script>
 
-<div class="autocomplete-wrapper relative h-auto {classList}">
+<div class="autocomplete-wrapper {classList}">
 	{#if records.length}
 		<!-- svelte-ignore a11y_click_events_have_key_events -->
 		<!-- svelte-ignore a11y_no_static_element_interactions -->
-		<div class="fixed left-0 top-0 z-20 h-full w-full" onclick={handleClickOutside}></div>
+		<div class="autocomplete-backdrop" onclick={handleClickOutside}></div>
 	{/if}
 	<Input
 		{...inputProps}
-		class="z-50 w-full {inputClass}"
+		class="autocomplete-input {inputClass}"
 		bind:inputEl
 		bind:value={filter}
 		placeholder={hasSelection ? '' : inputProps.placeholder}
@@ -128,8 +128,8 @@
 	/>
 
 	{#if hasSelection}
-		<div class="absolute bottom-0 left-0 right-0 top-0 z-50 flex items-center gap-2 px-4">
-			<span class="flex-1 p-2 text-xl text-white">
+		<div class="autocomplete-selection">
+			<span class="flex-1 p-2 text-xl">
 				{#if template}
 					{@render template(selected[0])}
 				{:else}
@@ -137,14 +137,13 @@
 				{/if}
 			</span>
 			<!-- svelte-ignore a11y_consider_explicit_label -->
-			<button onclick={handleClickUnselect}>
+			<button class="autocomplete-selection-clear" onclick={handleClickUnselect}>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="24"
 					height="24"
 					viewBox="0 0 24 24"
 					fill="none"
-					stroke="white"
 					stroke-width="2"
 					stroke-linecap="round"
 					stroke-linejoin="round"
@@ -156,16 +155,13 @@
 	{/if}
 
 	{#if records.length && !hasSelection}
-		<Card
-			class="autocomplete-popover absolute top-20 z-50 min-h-20 w-full min-w-[250px] bg-black"
-			bodyClass="overflow-y-auto"
-		>
+		<Card class="autocomplete-popover" bodyClass="overflow-y-auto">
 			{#if loading}
 				<LoadingSpinner absolute />
 			{:else}
 				{#each records as record}
 					<button
-						class="autocomplete-popover-item flex w-full select-none items-center gap-2 border-b-2 border-gray-200 p-4 text-left uppercase last:border-none hover:font-bold"
+						class="autocomplete-popover-item"
 						onclick={handleOptionClicked(record)}
 						onkeydown={handleOptionKeydown(record)}
 					>

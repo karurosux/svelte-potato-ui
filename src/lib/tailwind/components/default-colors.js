@@ -101,6 +101,20 @@ const defaultColors = (theme) => {
 				backgroundColor: theme('colors.black'),
 				color: theme('colors.white'),
 				borderColor: theme('colors.white')
+			},
+
+			'.confirmation-dialog': {
+				'.confirmation-dialog-content': {
+					backgroundColor: theme('colors.black'),
+					borderColor: theme('colors.white'),
+					color: theme('colors.white')
+				}
+			},
+
+			'.alert': {
+				borderColor: theme('colors.white'),
+				backgroundColor: theme('colors.black'),
+				color: theme('colors.white')
 			}
 		},
 
@@ -204,6 +218,20 @@ const defaultColors = (theme) => {
 				backgroundColor: theme('colors.white'),
 				color: theme('colors.black'),
 				borderColor: theme('colors.white')
+			},
+
+			'.confirmation-dialog': {
+				'.confirmation-dialog-content': {
+					backgroundColor: theme('colors.white'),
+					borderColor: theme('colors.black'),
+					color: theme('colors.black')
+				}
+			},
+
+			'.alert': {
+				borderColor: theme('colors.black'),
+				backgroundColor: theme('colors.white'),
+				color: theme('colors.black')
 			}
 		}
 	};
