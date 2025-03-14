@@ -24,6 +24,7 @@ import ConfirmationDialog from './confirmation-dialog/ConfirmationDialog.svelte'
 import Pager from './pager/Pager.svelte';
 import DropdownMenu from './dropdown-menu/DropdownMenu.svelte';
 import DropdownMenuItem from './dropdown-menu/DropdownMenuItem.svelte';
+import Autocomplete from './autocomplete/Autocomplete.svelte';
 
 export {
 	Button,
@@ -48,7 +49,8 @@ export {
 	ConfirmationDialog,
 	Pager,
 	DropdownMenu,
-	DropdownMenuItem
+	DropdownMenuItem,
+	Autocomplete
 };
 
 export type { SelectOption, Tab };

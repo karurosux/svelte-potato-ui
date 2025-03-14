@@ -7,6 +7,6 @@
 	let { ...props }: Props = $props();
 </script>
 
-<th {...props} class="px-4 py-4 text-sm {props.class}">
+<th {...props} class="table-header-cell {props.class}">
 	{@render props.children?.()}
 </th>

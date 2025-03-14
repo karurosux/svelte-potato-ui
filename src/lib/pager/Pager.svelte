@@ -2,13 +2,20 @@
 	import Button from '$lib/button/Button.svelte';
 
 	interface Props {
+		btnClass?: string;
 		page?: number;
 		totalRecords?: number;
 		recordsPerPage?: number;
 		onchange?: (page: number) => void;
 	}
 
-	let { page = 1, totalRecords = 10, recordsPerPage = 10, onchange }: Props = $props();
+	let {
+		page = 1,
+		totalRecords = 10,
+		recordsPerPage = 10,
+		btnClass = '',
+		onchange
+	}: Props = $props();
 	let totalPages = $derived(Math.ceil(totalRecords / recordsPerPage));
 
 	function handlePrevious() {
@@ -48,11 +55,16 @@
 </script>
 
 <div class="flex items-center justify-center gap-4">
-	<Button sm onclick={handlePrevious} disabled={page === 1}>Previous</Button>
+	<Button class={btnClass} sm onclick={handlePrevious} disabled={page === 1}>Previous</Button>
 	{#each getVisiblePages() as p}
-		<Button sm onclick={() => handlePageSelect(p)} disabled={p === page} class="!min-w-8">
+		<Button
+			sm
+			onclick={() => handlePageSelect(p)}
+			disabled={p === page}
+			class="!min-w-8 {btnClass}"
+		>
 			{p}
 		</Button>
 	{/each}
-	<Button sm onclick={handleNext} disabled={page === totalPages}>Next</Button>
+	<Button class={btnClass} sm onclick={handleNext} disabled={page === totalPages}>Next</Button>
 </div>

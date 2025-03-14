@@ -54,16 +54,16 @@
 	};
 </script>
 
-<dialog class="bg-transparent text-white" bind:this={dialog}>
-	<Card class="max-w-96 bg-black text-center {className}">
+<dialog class="confirmation-dialog" bind:this={dialog}>
+	<Card class="confirmation-dialog-content {className}">
 		<Title>
 			{title}
 		</Title>
-		<div class="mb-8">
+		<div class="confirmation-dialog-body">
 			{@render children?.()}
 		</div>
-		<div class="grid grid-cols-2 gap-4">
-			<Button class="col-span-1 !text-red-500 {cancelClass}" onclick={handleCancelClick}>
+		<div class="confirmation-dialog-actions">
+			<Button type="button" class="btn-red col-span-1 {cancelClass}" onclick={handleCancelClick}>
 				{#if cancelIcon}
 					{#snippet icon()}
 						{@render cancelIcon()}
@@ -71,7 +71,12 @@
 				{/if}
 				{cancelText}
 			</Button>
-			<Button {loading} class="col-span-1 !text-green-500 {okClass}" onclick={handleOkClick}>
+			<Button
+				type="button"
+				{loading}
+				class="btn-green col-span-1 {okClass}"
+				onclick={handleOkClick}
+			>
 				{#if okIcon}
 					{#snippet icon()}
 						{@render okIcon()}

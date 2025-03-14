@@ -8,11 +8,6 @@
 	let { children, class: classNames = '', ...props }: Props = $props();
 </script>
 
-<div
-	{...props}
-	role="alert"
-	aria-live="assertive"
-	class="rounded-xl border-4 border-gray-500 bg-gray-950 p-6 text-gray-200 {classNames}"
->
+<div {...props} role="alert" aria-live="assertive" class="alert {classNames}">
 	{@render children?.()}
 </div>

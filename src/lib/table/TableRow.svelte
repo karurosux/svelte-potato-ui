@@ -11,6 +11,6 @@
 	let { children, class: classNames = '', role = 'row', ...props }: Props = $props();
 </script>
 
-<tr {...props} class="border-b-2 border-gray-200 last:border-none {classNames}" {role}>
+<tr {...props} class="table-row {classNames}" {role}>
 	{@render children?.()}
 </tr>

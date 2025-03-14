@@ -8,6 +8,6 @@
 	let { children, class: classNames = '', ...props }: Props = $props();
 </script>
 
-<tr {...props} class="border-b-2 border-gray-200 {classNames}">
+<tr {...props} class="table-header-row {classNames}">
 	{@render children?.()}
 </tr>

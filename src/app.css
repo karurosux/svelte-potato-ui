@@ -3,5 +3,19 @@
 @import 'tailwindcss/utilities';
 
 :root {
-	@apply bg-black p-8;
+	@apply p-8;
+
+	--base-1: #fff;
+	--base-2: #f5f5f5;
+	--base-3: #e5e5e5;
+	--base-contrast: #000;
+	--base-text: #000;
+}
+
+.dark {
+	--base-1: #000;
+	--base-2: #222;
+	--base-3: #333;
+	--base-contrast: #fff;
+	--base-text: #fff;
 }

@@ -29,15 +29,9 @@
 	}
 </script>
 
-<div
-	{...props}
-	bind:this={divWrapper}
-	class="card border-3 flex flex-col overflow-hidden rounded-xl border-gray-200 {classNames}"
-	role="region"
-	aria-labelledby="card-header"
->
+<div {...props} bind:this={divWrapper} class="card {classNames}" role="region">
 	{#if header || headerTrailing}
-		<div id="card-header" class="card-header flex items-center bg-gray-200 p-4 {headerClass}">
+		<div class="card-header {headerClass}">
 			{@render header?.()}
 			<span class="flex-1"></span>
 			{@render headerTrailing?.()}
@@ -45,7 +39,7 @@
 	{/if}
 
 	<div
-		class="card-body relative flex-1 border-2 border-gray-200 p-4 text-gray-200 {bodyClass}"
+		class="card-body {bodyClass}"
 		class:!p-0={noPadding}
 		class:rounded-xl={!header}
 		class:rounded-b-xl={!!header}
