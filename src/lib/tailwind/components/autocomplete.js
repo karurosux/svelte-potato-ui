@@ -1,7 +1,7 @@
 const { getBaseColorsFromTheme } = require('./get-base-colors-from-theme');
 
 const autocompleteComponent = (/** @type {any} */ theme) => {
-	const { background1, contrast } = getBaseColorsFromTheme(theme);
+	const { base1, text, foreground } = getBaseColorsFromTheme(theme);
 	return {
 		'.autocomplete-wrapper': {
 			'@apply relative h-auto': {},
@@ -14,19 +14,19 @@ const autocompleteComponent = (/** @type {any} */ theme) => {
 			'.autocomplete-selection': {
 				'@apply absolute bottom-0 left-0 right-0 top-0 z-50 flex items-center gap-2 px-4': {},
 				'.autocomplete-selection-clear *': {
-					color: contrast,
-					stroke: contrast
+					color: foreground,
+					stroke: foreground
 				}
 			},
 			'.autocomplete-popover': {
 				'@apply absolute top-20 z-50 min-h-20 w-full min-w-[250px]': {},
-				backgroundColor: background1,
-				color: contrast,
-				borderColor: contrast,
+				backgroundColor: base1,
+				color: text,
+				borderColor: foreground,
 				'.autocomplete-popover-item': {
 					'@apply  flex w-full select-none items-center gap-2 border-b-2 p-4 text-left uppercase last:border-none hover:font-bold':
 						{},
-					borderColor: contrast
+					borderColor: foreground
 				}
 			}
 		}

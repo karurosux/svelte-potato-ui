@@ -1,21 +1,30 @@
-export const getBaseColorsFromTheme = (theme) => {
-	const base1 = theme('colors.base1');
-	const base2 = theme('colors.base2');
-	const base3 = theme('colors.base3');
-	const baseContrast = theme('colors.baseContrast');
-	const baseText = theme('colors.baseText');
+export const getBaseColorsFromTheme = (/** @type {(arg0: string) => any} */ theme) => {
+	const cbase1 = theme('colors.base1');
+	const cbase2 = theme('colors.base2');
+	const cbase3 = theme('colors.base3');
+	const cbaseContrast = theme('colors.baseContrast');
+	const cbaseText = theme('colors.baseText');
+	const cbaseTextInverse = theme('colors.baseTextInverse');
+	const cforeground = theme('colors.foreground');
+	const cforegroundText = theme('colors.foregroundText');
 
-	const background1 = base1 || theme('colors.black');
-	const background2 = base2 || theme('colors.white');
-	const background3 = base3 || theme('colors.gray.200');
-	const contrast = baseContrast || theme('colors.white');
-	const text = baseText || theme('colors.white');
+	const base1 = cbase1 || theme('colors.black');
+	const base2 = cbase2 || theme('colors.white');
+	const base3 = cbase3 || theme('colors.gray.200');
+	const contrast = cbaseContrast || theme('colors.white');
+	const text = cbaseText || theme('colors.white');
+	const textInverse = cbaseTextInverse || theme('colors.black');
+	const foreground = cforeground || theme('colors.white');
+	const foregroundText = cforegroundText || theme('colors.black');
 
 	return {
-		background1,
-		background2,
-		background3,
+		base1,
+		base2,
+		base3,
 		contrast,
-		text
+		text,
+		textInverse,
+		foreground,
+		foregroundText
 	};
 };

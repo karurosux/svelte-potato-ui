@@ -1,7 +1,7 @@
 const { getBaseColorsFromTheme } = require('./get-base-colors-from-theme');
 
 const dropdownComponent = (/** @type {any} */ theme) => {
-	const { background1, contrast } = getBaseColorsFromTheme(theme);
+	const { base1, foreground, text } = getBaseColorsFromTheme(theme);
 
 	return {
 		'.dropdown-menu-wrapper': {
@@ -11,9 +11,9 @@ const dropdownComponent = (/** @type {any} */ theme) => {
 			},
 			'.dropdown-menu': {
 				'@apply absolute z-50 min-w-[250px]': {},
-				backgroundColor: background1,
-				color: contrast,
-				borderColor: contrast,
+				backgroundColor: base1,
+				color: text,
+				borderColor: foreground,
 				'.card-body': {
 					'@apply overflow-y-auto': {}
 				}

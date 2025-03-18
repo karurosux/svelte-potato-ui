@@ -4,7 +4,7 @@ const { getBaseColorsFromTheme } = require('./get-base-colors-from-theme');
  * @param {any} theme
  */
 const buttonComponent = (theme) => {
-	const { contrast, text } = getBaseColorsFromTheme(theme);
+	const { foreground } = getBaseColorsFromTheme(theme);
 	return {
 		'.btn': {
 			position: 'relative',
@@ -19,7 +19,7 @@ const buttonComponent = (theme) => {
 			paddingBottom: '0.5rem',
 			fontWeight: 'bold',
 			textTransform: 'uppercase',
-			color: text,
+			color: foreground,
 			cursor: 'pointer',
 			borderRadius: '0.75rem',
 
@@ -56,7 +56,7 @@ const buttonComponent = (theme) => {
 				inset: '0',
 				zIndex: '-20',
 				borderRadius: '0.75rem',
-				border: '2px solid ' + contrast
+				border: '2px solid ' + foreground
 			},
 
 			'&::after': {
@@ -68,7 +68,7 @@ const buttonComponent = (theme) => {
 				bottom: '10px',
 				zIndex: '-10',
 				borderRadius: '0.75rem',
-				boxShadow: '0 10px 0 0 ' + contrast
+				boxShadow: '0 10px 0 0 ' + foreground
 			},
 
 			'&:active': {

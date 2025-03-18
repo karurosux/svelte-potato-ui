@@ -1,7 +1,7 @@
 const { getBaseColorsFromTheme } = require('./get-base-colors-from-theme');
 
 const toastComponent = (/** @type {any} */ theme) => {
-	const { background1, contrast } = getBaseColorsFromTheme(theme);
+	const { base1, text, foreground } = getBaseColorsFromTheme(theme);
 	return {
 		'.toast-container': {
 			'@apply fixed grid grid-cols-1 gap-8 z-50': {},
@@ -20,9 +20,9 @@ const toastComponent = (/** @type {any} */ theme) => {
 			'.toast-instance': {
 				'@apply flex min-w-[200px] max-w-[500px] items-center justify-center rounded-lg border-2 p-8 shadow-lg':
 					{},
-				backgroundColor: background1,
-				color: contrast,
-				borderColor: contrast,
+				backgroundColor: base1,
+				color: text,
+				borderColor: foreground,
 
 				...Object.keys(theme('colors')).reduce((acc, color) => {
 					if (typeof theme(`colors.${color}`) === 'object') {

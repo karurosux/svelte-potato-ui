@@ -4,18 +4,21 @@ const { getBaseColorsFromTheme } = require('./get-base-colors-from-theme.js');
  * @param {any} theme
  */
 const cardComponent = (theme) => {
-	const { background1, contrast, text } = getBaseColorsFromTheme(theme);
+	const { foreground, foregroundText, text } = getBaseColorsFromTheme(theme);
 	return {
 		'.card': {
 			'@apply border-2 flex flex-col overflow-hidden rounded-xl': {},
-			borderColor: contrast,
+			borderColor: foreground,
 			color: text,
 			'.card-header': {
 				'@apply  flex items-center p-4': {},
-				backgroundColor: contrast,
-				color: background1,
+				backgroundColor: foreground,
+				color: foregroundText,
 				'.card-title': {
-					color: background1
+					color: foregroundText,
+					'*': {
+						color: foregroundText
+					}
 				}
 			},
 			'.card-body': {

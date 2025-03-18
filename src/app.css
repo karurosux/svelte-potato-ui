@@ -5,17 +5,23 @@
 :root {
 	@apply p-8;
 
-	--base-1: #fff;
-	--base-2: #f5f5f5;
-	--base-3: #e5e5e5;
-	--base-contrast: #000;
-	--base-text: #000;
+	--base-1: theme('colors.white');
+	--base-2: theme('colors.neutral.300');
+	--base-3: theme('colors.neutral.500');
+	--base-contrast: theme('colors.black');
+	--base-text: theme('colors.black');
+	--base-text-inverse: #fff;
+	--foreground: theme('colors.neutral.700');
+	--foreground-text: theme('colors.white');
 }
 
 .dark {
 	--base-1: #000;
 	--base-2: #222;
-	--base-3: #333;
+	--base-3: theme('colors.neutral.600');
 	--base-contrast: #fff;
 	--base-text: #fff;
+	--base-text-inverse: #000;
+	--foreground: theme('colors.neutral.300');
+	--foreground-text: theme('colors.black');
 }

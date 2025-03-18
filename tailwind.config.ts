@@ -13,6 +13,9 @@ export default {
 				base3: `var(--base-3)`,
 				baseContrast: `var(--base-contrast)`,
 				baseText: 'var(--base-text)',
+				baseTextInverse: 'var(--base-text-inverse)',
+				foreground: `var(--foreground)`,
+				foregroundText: `var(--foreground-text)`,
 				primary: colors.purple,
 				secondary: colors.amber
 			}

@@ -1,15 +1,15 @@
 const { getBaseColorsFromTheme } = require('./get-base-colors-from-theme');
 
 const confirmationDialogComponent = (/** @type {any} */ theme) => {
-	const { background1, contrast } = getBaseColorsFromTheme(theme);
+	const { base1, foreground, text } = getBaseColorsFromTheme(theme);
 	return {
 		'.confirmation-dialog': {
 			'@apply bg-transparent': {},
 			'.confirmation-dialog-content': {
 				'@apply max-w-96 text-center': {},
-				backgroundColor: background1,
-				color: contrast,
-				borderColor: contrast,
+				backgroundColor: base1,
+				color: text,
+				borderColor: foreground,
 				'.confirmation-dialog-body': {
 					'@apply mb-8': {}
 				},

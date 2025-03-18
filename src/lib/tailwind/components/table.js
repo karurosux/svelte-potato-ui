@@ -1,7 +1,7 @@
 const { getBaseColorsFromTheme } = require('./get-base-colors-from-theme');
 
 const tableComponent = (/** @type {any} */ theme) => {
-	const { contrast, text } = getBaseColorsFromTheme(theme);
+	const { text, foreground } = getBaseColorsFromTheme(theme);
 	return {
 		'.table': {
 			'@apply w-full overflow-hidden': {},
@@ -12,7 +12,7 @@ const tableComponent = (/** @type {any} */ theme) => {
 				},
 				'.table-header-row': {
 					'@apply border-b-2': {},
-					borderColor: contrast,
+					borderColor: foreground,
 					color: text,
 					'.table-header-cell': {
 						color: text
@@ -21,7 +21,7 @@ const tableComponent = (/** @type {any} */ theme) => {
 			},
 			'.table-row': {
 				'@apply border-b-2 last:border-b-0': {},
-				borderColor: contrast,
+				borderColor: foreground,
 				'.table-row-cell': {
 					'@apply px-4 py-4': {},
 					color: text

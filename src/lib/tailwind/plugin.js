@@ -18,7 +18,7 @@ const alertComponent = require('./components/alert');
 module.exports = plugin(
 	/** @type {import('tailwindcss').Config} */
 	function ({ addBase, addComponents, theme }) {
-		const { background1, text } = getBaseColorsFromTheme(theme);
+		const { base1: background1, text } = getBaseColorsFromTheme(theme);
 
 		addBase({
 			// @ts-ignore

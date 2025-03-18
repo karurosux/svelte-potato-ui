@@ -1,26 +1,26 @@
 const { getBaseColorsFromTheme } = require('./get-base-colors-from-theme');
 
 const switchComponent = (/** @type {any} */ theme) => {
-	const { background1, contrast } = getBaseColorsFromTheme(theme);
+	const { base1, foreground } = getBaseColorsFromTheme(theme);
 	return {
 		'.switch': {
 			'.switch-input': {
-				borderColor: contrast,
-				backgroundColor: background1,
+				borderColor: foreground,
+				backgroundColor: base1,
 				'&:checked': {
-					backgroundColor: contrast
+					backgroundColor: foreground
 				}
 			},
 			'.switch-label': {
-				borderColor: contrast,
-				backgroundColor: background1,
+				borderColor: foreground,
+				backgroundColor: base1,
 				'&:before': {
-					backgroundColor: contrast
+					backgroundColor: foreground
 				}
 			},
 			'.switch-handle': {},
 			'.switch-label-text': {
-				color: contrast
+				color: foreground
 			}
 		}
 	};
